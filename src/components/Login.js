@@ -3,22 +3,25 @@ import Form from './Form';
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
+import { base_url } from '../utils';
 
-const Login = () => {
+const Login = ({setIsUserRegistered, isUserRegistered}) => {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [, setCookies] = useCookies(["access_token"]);
   const navigate = useNavigate();
 
-  const handleSubmit = async(event) =>{
+  const handleSignIn = async(event) =>{
         event.preventDefault();
         try {
           const req = {username, password};
-          const response = await axios.post('http://localhost:3000/auth/login', req);
+          console.log(req)
+          const response = await axios.post(`${base_url}/auth/login`, req);
+          
           setCookies("access_token", response.data.token);
           window.localStorage.setItem("userID", response.data.userID);
-          console.log(response.data)
+          
           navigate('/');
 
         } catch (error) {
@@ -33,7 +36,9 @@ const Login = () => {
     setUsername={setUsername}
     password={password}
     setPassword={setPassword}
-    onSubmit={handleSubmit}
+    setIsUserRegistered={setIsUserRegistered}
+    isUserRegistered={isUserRegistered}
+    handleSignIn={handleSignIn}
   />
   )
 }
