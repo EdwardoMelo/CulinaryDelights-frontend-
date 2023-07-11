@@ -2,7 +2,7 @@
 
 <img src="https://i.ibb.co/xG4bqqM/readme.png"/>
 
-FoodApp is a web application built with React that allows users to create and save recipes. It uses Tailwind CSS and Sass for styling.
+Culinary Delights is a web application built with React that allows users to create and save recipes. It uses Tailwind CSS and Sass for styling.
 
 ## Features
 
