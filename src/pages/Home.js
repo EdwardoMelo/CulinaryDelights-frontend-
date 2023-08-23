@@ -9,7 +9,7 @@ const Home = () => {
   const [recipes, setRecipes] = useState([]);
   const [savedRecipes, setSavedRecipes] = useState([]);
   const userID = window.localStorage.getItem('userID');
-  const [cookies, _] = useCookies(["access_token"]);
+  const [cookies, ] = useCookies(["access_token"]);
 
   useEffect( () => {
       const fetchRecipes = async () => {
@@ -50,8 +50,9 @@ const Home = () => {
 
   return (
    <div>
-    <h1>Community Recipes</h1>
-    <ul> 
+    <h1 className='text-1xl'>Community recipes</h1>
+    { recipes && ( 
+      <ul> 
       {recipes.map((recipe)=>(
         <li className='card' key={recipe._id}>
           <div className='cardImage'>
@@ -81,6 +82,8 @@ const Home = () => {
         </li>
       ))}
     </ul>
+    )}
+    
    </div>
   )
   
