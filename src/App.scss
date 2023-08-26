@@ -16,6 +16,12 @@ body {
   padding: 0;
   background: #eef0f8;
 }
+.header{
+  background-image:linear-gradient(90deg, rgba(0, 0, 0, 0.9), rgba(81, 81, 81, 0.4) 60%), url("https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-position: center;
+  background-color: black;
+}
 
 h1{
  color: black;
@@ -64,8 +70,8 @@ input {
   margin: 0;
   width: 100%;
   height: 80px;
-  background-color: #385170;
-  backdrop-filter: blur;
+  background-color: rgba($color: #000000, $alpha: 0.1);
+  backdrop-filter: blur(1.2px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,8 +89,9 @@ input {
     text-decoration: none;
     margin: 10px;
     font-weight: 300;
-    font-size: 25px;
-
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 500;
     &:hover{
       transition: all 0.3s;
       color: rgb(203, 240, 255);
@@ -166,19 +173,11 @@ input {
 
 
 .create-recipe {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  width: 40vw;
-  margin: 20px;
-  @media screen and (max-width: 800px){
-    width: 90vw;
-  }
+  background-image: linear-gradient(90deg, rgba(0,0,0,0.5) 50%, rgba(94,94,94,0.4) 70%) ,url('https://img.freepik.com/free-photo/delicious-arepas-with-vegetables_23-2148716337.jpg?w=1060&t=st=1692873519~exp=1692874119~hmac=83488befe7632e425a2d92cc69774b0c6a7d6698d0236bd14b7dbb74166dc3c8');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
 }
 .create-recipe form {
   display: flex;
@@ -196,76 +195,9 @@ ul {
   grid-template-columns: repeat(auto-fit, max(350px));
 }
 
-.card {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  padding: 10px;
-  height: fit-content;
-  border-radius: 15px;
-  background-color: #fff;
-  .cardImage{
-    background-size: cover;
-    height: 350px;
-    width: 100%;
-  }
-  img{
-    width: 100%;
-    height: 100%;
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-  }
-  .card-content {
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.9rem;
-    padding: 10px;
-  }
-  .card-info{
-    display: flex;
-    background-color: #f5f5f5;
-    justify-content: left;
-    padding-left: 18px;
-    align-items: center;
-    padding: 0.5rem;
-    border-radius: 10px;
-  }
-  .ingredients{
-    margin-top: 1rem;
-    ul{
-      display: flex;
-      justify-content: left;
-      width: 90%;
-      font-size: 0.8rem;
-      flex-wrap: wrap;
-      li{
-        background-color: rgb(242, 251, 255);
-        padding: 0.2rem;
-      }
-    }
-    h2{
-      text-align: center;
-    }
-  }
-  h2 {
-    color: #000;
-    margin-top: 0;
-    font-weight: 600;
-  }
-  p {
-    max-width: 400px;
-    font-size: 0.8rem;
-  }
-  strong{
-    color: #686872;
-    font-weight: 400;
-    font-size: 0.8rem;
-    text-align: left;
-    display: none;
-  }
+.card-image{
+ 
 }
-
 
 
 

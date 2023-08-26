@@ -24,19 +24,19 @@ const Navbar = () => {
     navigate('/auth')
   }
   return (
-    <div className='navbar'>
-      <div className='navbarLinks'>
+    <div className='navbar w-full py-6 px-6 z-10  fixed top-0 flex justify-center font-semibold'>
+      <div className='navbarLinks flex justify-around w-1/2 uppercase font-light'>
       <Link to="/">Home</Link>
       {isAuthenticated && <Link to="/create-recipe">Create Recipe</Link>}
       {!isAuthenticated ? (<Link to="/auth">Login/ Sing up</Link>) : (
-        <><Link to="/saved-recipes">Saved Recipes</Link><button className='logout' onClick={logout} t>
+        <><Link to="/saved-recipes">Saved Recipes</Link><button className='logout uppercase' onClick={logout} t>
             logout
           </button></>
         )}
       </div>
      
 
-      <div className='navbarMenu'>
+      <div className='navbarMenu border-2 flex items-cente'>
         <HiMenuAlt4 onClick={() => setToggle(true)} />
         {
           toggle && (
