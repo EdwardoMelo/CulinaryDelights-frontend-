@@ -80,8 +80,8 @@ const saveRecipe = async (recipe) => {
     <div className=' drop-shadow-lg  border-black bg-black min-h-[780px] w-screen '>
         <div className="header w-full bg-red-800 h-[700px] top-10">
           <div className='flex justify-end items-center lg:w-1/2  h-full'>
-              <div className='header-content  flex items-center lg:w-4/5 h-4/5'>
-                      <h1 className='text-8xl text-left tracking-tight font-extrabold text-white drop-shadow-lg'>
+              <div className='header-content  flex items-center w-full lg:w-4/5 h-4/5'>
+                      <h1 className='text-5xl text-center lg:text-8xl lg:text-left tracking-tight font-extrabold text-white drop-shadow-lg'>
                               FIND AND SHARE DELICIOUS RECEPIES
                       </h1>
               </div>
