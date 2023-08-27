@@ -36,16 +36,16 @@ const Navbar = () => {
       </div>
      
 
-      <div className='navbarMenu border-2 flex items-cente'>
+      <div className='navbarMenu border-2 flex items-center'>
         <HiMenuAlt4 onClick={() => setToggle(true)} />
         {
           toggle && (
             <motion.div
-              whileInView={{ x: [300, 0] }}
+              whileInView={{ x: [250, 0] }}
               transition={{ duration: 0.85, ease: 'easeOut' }}
             >
               <HiX onClick={() => setToggle(false)} />
-              <ul>{ }
+              <ul>
                 {items.map((item) => (
                   <li className='app__flex p-text' key={item.name}>
                     {item.href === '/auth' && isAuthenticated ?

@@ -116,16 +116,15 @@ input {
       top: 0;
       bottom: 0;
       right: 0;
-      z-index: 5;
+      z-index: 10;
       padding: 1rem;
-      width: 80%;
+      width: 95%;
       height: 100vh;
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
       flex-direction: column;
-      background-color: #385170;
-      background-size: cover;
+      background-color: #a3acb6;
       box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
       svg{
           width: 35px;

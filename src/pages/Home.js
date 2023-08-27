@@ -6,16 +6,16 @@ import Loader from '../components/Loading';
 import { base_url } from '../utils';
 
 const Home = () => {
-  
+
   const [recipes, setRecipes] = useState([]);
   const [savedRecipes, setSavedRecipes] = useState([]);
   // eslint-disable-next-line no-unused-vars
   const [cookies, _] = useCookies(["access_token"]);
   const [isLoading, setIsLoading] = useState(true);
   const userID = window.localStorage.getItem("userID");
- // const [first, setfirst] = useState()
+  // const [first, setfirst] = useState()
   useEffect(() => {
-    
+
     const fetchRecipes = async () => {
       try {
         const response = await axios.get(`${base_url}/recipes`);
@@ -25,28 +25,32 @@ const Home = () => {
       }
     }
 
+
+    fetchRecipes();
+
+  }, []);
+
+  useEffect(() => {
     const fetchSavedRecipes = async () => {
-      
       if (!userID) return;
       try {
         const response = await axios.get(`${base_url}/recipes/savedRecipes/${userID}`);
         setSavedRecipes(response.data.savedRecipes);
-       
+
       } catch (error) {
         console.log(error);
       }
-
+      
     }
-    fetchRecipes();
     fetchSavedRecipes();
+  }, [userID])
+  
 
-  }, [userID]);
 
 useEffect(() => {
  
   if (recipes.length && savedRecipes) {
     setIsLoading(false);
-    console.log(recipes)
   }
 }, [recipes ,savedRecipes]);
 
@@ -81,7 +85,7 @@ const saveRecipe = async (recipe) => {
         <div className="header w-full bg-red-800 h-[700px] top-10">
           <div className='flex justify-end items-center lg:w-1/2  h-full'>
               <div className='header-content  flex items-center w-full lg:w-4/5 h-4/5'>
-                      <h1 className='text-5xl text-center lg:text-8xl lg:text-left tracking-tight font-extrabold text-white drop-shadow-lg'>
+                      <h1 className='text-5xl lg:text-8xl lg:text-left tracking-tight font-extrabold text-white drop-shadow-lg'>
                               FIND AND SHARE DELICIOUS RECEPIES
                       </h1>
               </div>
