@@ -51,7 +51,9 @@ const Navbar = () => {
                     {item.href === '/auth' && isAuthenticated ?
                       (<button className='logout' onClick={logout} >
                         logout
-                      </button>) : (<a href={item.href}>{item.name}</a>)}
+                      </button>) : 
+                      (<a href={item.href === "/create-recipe" ? '' : item.href}>
+                      {item.name === "Create Recipe" ? '' : item.name}</a>)}
                   </li>
                 ))}
               </ul>
